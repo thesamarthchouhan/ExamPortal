@@ -22,8 +22,7 @@ public class UserServiceImpl implements UserService {
     public User createUser(User user, Set<UserRole> userRoles) throws Exception {
         // To create a new user, first check if it already exists in the database
         User local = this.userRepository.findByUserName(user.getUserName());
-        System.out.println("I am in User Service impl");
-        System.out.println("User" + user.getUserName());
+
         if(local!=null){
             System.out.println("User is already present. Cannot create new user with existing username.");
             throw new Exception("User already exists.");
